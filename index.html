@@ -1,0 +1,30 @@
+---
+
+layout: none
+
+----------------
+
+<h1>Welcome to ChaosHash!</h1>
+
+<div>We serve random files by users!</div>
+
+<br>
+
+<div>
+  Want to Request?
+  <a href="https://thedust.pages.dev/upload">Click Here!</a>
+</div>
+
+<hr>
+
+<h2>Latest Image</h2>
+
+{% assign images = site.static_files | where_exp: "file", "file.extname == '.png' or file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.gif' or file.extname == '.webp' or file.extname == '.avif'" %}
+
+{% assign latest_image = images | last %}
+
+{% if latest_image %} <img src="{{ latest_image.path }}" alt="Latest Image">
+{% else %}
+
+<div>No images found.</div>
+{% endif %}
