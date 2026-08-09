@@ -1,36 +1,6 @@
-<img id="latest-image" alt="Latest image">
+{% assign images = site.static_files | where_exp: "file", "file.extname == '.png' or file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.gif' or file.extname == '.webp' or file.extname == '.avif'" %}
+{% assign latest = images | sort: "path" | last %}
 
-<script>
-(async () => {
-    const owner = "{{ site.github.owner_name }}";
-    const repo = "{{ site.github.repository_nwo }}";
-    const branch = "{{ site.github.source.branch | default: 'main' }}";
-    const image = document.getElementById("latest-image");
-
-    const imageExtensions = /\.(png|jpe?g|gif|webp|avif|bmp|svg)$/i;
-
-    try {
-        const commits = await fetch(
-            `https://api.github.com/repos/${owner}/${repo}/commits?sha=${branch}&per_page=100`
-        ).then(r => r.json());
-
-        for (const commit of commits) {
-            const data = await fetch(
-                `https://api.github.com/repos/${owner}/${repo}/commits/${commit.sha}`
-            ).then(r => r.json());
-
-            const file = data.files?.find(f =>
-                imageExtensions.test(f.filename) &&
-                f.status !== "removed"
-            );
-
-            if (file) {
-                image.src = `https://raw.githubusercontent.com/${owner}/${repo}/${commit.sha}/${file.filename}`;
-                break;
-            }
-        }
-    } catch (e) {
-        console.error(e);
-    }
-})();
-</script>
+{% if latest %}
+<img src="{{ latest.path | relative_url }}" alt="Latest image">
+{% endif %}
