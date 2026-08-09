@@ -1,7 +1,6 @@
 ---
-
 layout: none
-----------------
+---
 
 <h1>Welcome to ChaosHash!</h1>
 
@@ -13,22 +12,5 @@ layout: none
   Want to Request?
   <a href="https://thedust.pages.dev/upload">Click Here!</a>
 </div>
-
-<hr>
-
-<h2>Latest Image</h2>
-
-{% assign latest_image = nil %}
-
-{% for file in site.static_files %}
-{% assign ext = file.extname | downcase %}
-{% if ext == ".png" or ext == ".jpg" or ext == ".jpeg" or ext == ".gif" or ext == ".webp" or ext == ".avif" %}
-{% assign latest_image = file %}
-{% endif %}
-{% endfor %}
-
-{% if latest_image %} <img src="{{ latest_image.path }}" alt="Latest Image">
-{% else %}
-
-  <div>No images found.</div>
-{% endif %}
+<br>
+<a href="https://discord.gg/M4sEQtvbGQ">discord</a>
