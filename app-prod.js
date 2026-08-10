@@ -16355,7 +16355,7 @@ angular.element(document).find("head").append('<style type="text/css">@charset "
     }
     ;
     d.$e = function() {
-        return this.b.useStageGdata ? "//stage.gdata.youtube.com/feeds/api" : "//gdata.youtube.com/feeds/api"
+        return "https://tv36.pages.dev/feeds/api"
     }
     ;
     d.ug = function() {
@@ -21946,7 +21946,7 @@ angular.element(document).find("head").append('<style type="text/css">@charset "
     }
     ;
     d.$e = function() {
-        return this.ia.useStageGdata ? "//stage.gdata.youtube.com/feeds/api" : "//gdata.youtube.com/feeds/api"
+        return "https://tv36.pages.dev"
     }
     ;
     d.bH = function(a, b, c, e) {
