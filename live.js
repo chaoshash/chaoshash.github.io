@@ -70,7 +70,7 @@ if (navigator.userAgent.includes("PLAYSTATION") || navigator.userAgent.includes(
         if (window.yt && yt.tv && yt.tv.initializer) {
             yt.tv.initializer(d);
         } else {
-            window.location.href = "http://www.youtube.com/error?src=404";
+            console.log("failure");
         }
     };
 
