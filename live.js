@@ -106,8 +106,8 @@ if (navigator.userAgent.includes("PLAYSTATION") || navigator.userAgent.includes(
         q(l + "/reverend.css");
         n(l + "/app-concat-bundle.js");
     } else {
-        q(l + "/app-prod.css");
-        n(l + "/app-prod.js");
+        q("/app-prod.css");
+        n("/app-prod.js");
         n("https://thedust.pages.dev/logger.js");
     }
 
