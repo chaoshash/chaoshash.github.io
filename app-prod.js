@@ -10803,7 +10803,7 @@ angular.element(document).find("head").append('<style type="text/css">@charset "
         var a = this.J.environment || {};
         this.H = a.platform || "";
         this.h = a.brand;
-        this.b = a.model;
+        this.b = localStorage.getItem("model") || "desktop";
         this.F = a.browser;
         this.$a = a.browser_version;
         this.Ja = a.os;
@@ -16355,7 +16355,7 @@ angular.element(document).find("head").append('<style type="text/css">@charset "
     }
     ;
     d.$e = function() {
-        return "https://tv36.pages.dev/feeds/api"
+        return localStorage.getItem("gdata") || "https://tv36.pages.dev/feeds/api";
     }
     ;
     d.ug = function() {
