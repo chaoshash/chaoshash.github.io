@@ -15,5 +15,11 @@ layout: none
 <br>
 <a href="https://discord.gg/M4sEQtvbGQ">discord</a>
 
-<h2>Latest Image</h2>
-<img src="https://thedust.pages.dev/chaoshash/latestimage" width="256px" height="256px" alt="Latest Image">
+<ul>
+  {% for file in site.static_files %}
+    {% assign path = file.path | remove_first: '/' %}
+    {% unless path contains '/' %}
+      <li><a href="{{ path }}">{{ path }}</a></li>
+    {% endunless %}
+  {% endfor %}
+</ul>
