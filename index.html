@@ -16,10 +16,5 @@ layout: none
 <a href="https://discord.gg/M4sEQtvbGQ">discord</a>
 
 <ul>
-  {% for file in site.static_files %}
-    {% assign path = file.path | remove_first: '/' %}
-    {% unless path contains '/' %}
-      <li><a href="{{ path }}">{{ path }}</a></li>
-    {% endunless %}
-  {% endfor %}
+      <li><div>you can now edit this index page. (type index.html as the filepath in thedust.pages.dev/upload)</div></li>
 </ul>
